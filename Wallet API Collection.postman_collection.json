@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "9f501125-15ab-48ca-a6df-d393b9869f06",
+		"name": "Wallet API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30235373",
+		"_collection_link": "https://www.postman.com/red-equinox-871061/workspace/flancetest/collection/30235373-9f501125-15ab-48ca-a6df-d393b9869f06?action=share&source=collection_link&creator=30235373"
+	},
+	"item": [
+		{
+			"name": "Create Wallet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"john@example.com\",\n  \"phone\": \"08123456789\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/wallet/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Wallet by Email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/wallet/by-email?email=john@example.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"by-email"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "john@example.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Link Bank",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"accountName\": \"John Doe\",\n  \"accountNumber\": \"1234567890\",\n  \"bank\": \"FLUTTERWAVE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/wallet/1/link-bank",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"1",
+						"link-bank"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fund Wallet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"accountNumber\": \"1234567890\",\n  \"gateway\": \"FLUTTERWAVE\",\n  \"amount\": 5000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/wallet/1/fund",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"1",
+						"fund"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Linked Banks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/wallet/1/banks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"1",
+						"banks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Wallet Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/wallet/1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
